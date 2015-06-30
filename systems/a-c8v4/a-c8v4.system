@@ -1,0 +1,16 @@
+SAPI=1
+[main]
+name = a-c8v
+description = "A-C8V4 board OpenRISC system"
+
+backend = quartus
+
+[quartus]
+family = "Cyclone II"
+device = EP2C8Q208C8
+sdc_files = data/a-c8v4.sdc
+tcl_files = data/pinmap.tcl
+            data/options.tcl
+
+[scripts]
+post_build_scripts = scripts/build_summary
