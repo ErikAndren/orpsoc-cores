@@ -625,16 +625,15 @@ simple_spi spi0(
 // GPIO 0
 //
 ////////////////////////////////////////////////////////////////////////
-   wire gpio0_out;
+   wire [8-1:0] gpio0_out;
 
    assign gpio0_io = gpio0_out;
-   
 
 gpio gpio0 (
 	// GPIO bus
-	.gpio_i		(gpio0_in),
+	.gpio_i		(8'b0),
 	.gpio_o		(gpio0_out),
-	.gpio_dir_o	(gpio0_dir),
+	.gpio_dir_o	(),
 	// Wishbone slave interface
 	.wb_adr_i	(wb_m2s_gpio0_adr[0]),
 	.wb_dat_i	(wb_m2s_gpio0_dat),
