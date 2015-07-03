@@ -203,8 +203,10 @@ orpsoc_top dut
 	.flash_we_n_pad_o	(flash_we_n),
 
 	.uart_rx_pad_i		(),
-	.uart_tx_pad_o		(uart_tx)
+	.uart_tx_pad_o		(uart_tx),
 
+        .gpio0_io               (),
+        .gpio1_i                (4'b0)
 );
 
 ////////////////////////////////////////////////////////////////////////
