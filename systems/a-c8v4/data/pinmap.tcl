@@ -5,14 +5,14 @@ set_location_assignment PIN_23 -to sys_clk_pad_i
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sys_clk_pad_i
 
 # SD card
-set_location_assignment PIN_99 -to sd_clk_pad_o
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_clk_pad_o
-set_location_assignment PIN_101 -to sd_cmd_pad_o
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_cmd_pad_o
-set_location_assignment PIN_95 -to sd_dat_pad_i
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_dat_pad_i
-set_location_assignment PIN_102 -to sd_dat3_pad_o
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_dat3_pad_o
+# set_location_assignment PIN_99 -to sd_clk_pad_o
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_clk_pad_o
+# set_location_assignment PIN_101 -to sd_cmd_pad_o
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_cmd_pad_o
+# set_location_assignment PIN_95 -to sd_dat_pad_i
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_dat_pad_i
+# set_location_assignment PIN_102 -to sd_dat3_pad_o
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_dat3_pad_o
 
 # UART
 set_location_assignment PIN_160 -to uart0_srx_pad_i
@@ -107,20 +107,21 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_we_pad_o
 set_location_assignment PIN_182 -to sdram_clk_pad_o
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sdram_clk_pad_o
 
-# GREEN LED
-set_location_assignment PIN_106 -to gpio0_io[0]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[0]
-set_location_assignment PIN_105 -to gpio0_io[1]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[1]
-set_location_assignment PIN_104 -to gpio0_io[2]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[2]
-set_location_assignment PIN_127 -to gpio0_io[3]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[3]
-set_location_assignment PIN_128 -to gpio0_io[4]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[4]
-set_location_assignment PIN_133 -to gpio0_io[5]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[5]
-set_location_assignment PIN_134 -to gpio0_io[6]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[6]
-set_location_assignment PIN_135 -to gpio0_io[7]
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[7]
+# # GREEN LED
+# set_location_assignment PIN_106 -to gpio0_io[0]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[0]
+# set_location_assignment PIN_105 -to gpio0_io[1]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[1]
+# set_location_assignment PIN_104 -to gpio0_io[2]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[2]
+# set_location_assignment PIN_127 -to gpio0_io[3]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[3]
+# set_location_assignment PIN_128 -to gpio0_io[4]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[4]
+# set_location_assignment PIN_133 -to gpio0_io[5]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[5]
+# set_location_assignment PIN_134 -to gpio0_io[6]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[6]
+# set_location_assignment PIN_135 -to gpio0_io[7]
+# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[7]
+# 8370
