@@ -35,5 +35,13 @@
 
 // Included modules: define to include
 `define BOOTROM
-`define OR1200_CPU
+
+//8374 comb blocks
+//`define OR1200_CPU
+
+//9104 comb blocks
+`define MOR1KX_CPU
+
+`define MOR1KX_CPU_FLAVOR "CAPPUCCINO"
+
 // end of included module defines - keep this comment line here
