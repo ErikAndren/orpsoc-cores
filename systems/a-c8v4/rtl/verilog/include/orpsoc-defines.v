@@ -40,8 +40,10 @@
 //`define OR1200_CPU
 
 //9104 comb blocks
+//9099
 `define MOR1KX_CPU
 
-`define MOR1KX_CPU_FLAVOR "CAPPUCCINO"
+//`define MOR1KX_CPU_FLAVOR "CAPPUCCINO"
+`define MOR1KX_CPU_FLAVOR "ESPRESSO"
 
 // end of included module defines - keep this comment line here
