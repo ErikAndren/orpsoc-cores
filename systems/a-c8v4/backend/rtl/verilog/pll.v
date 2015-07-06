@@ -124,7 +124,7 @@ module pll (
 		altpll_component.clk2_phase_shift = "0",
 		altpll_component.compensate_clock = "CLK0",
 		altpll_component.gate_lock_signal = "NO",
-		altpll_component.inclk0_input_frequency = 20000,
+		altpll_component.inclk0_input_frequency = 50000,
 		altpll_component.intended_device_family = "Cyclone II",
 		altpll_component.invalid_lock_multiplier = 5,
 		altpll_component.lpm_hint = "CBX_MODULE_PREFIX=pll",
@@ -304,7 +304,7 @@ endmodule
 // Retrieval info: CONSTANT: CLK2_PHASE_SHIFT STRING "0"
 // Retrieval info: CONSTANT: COMPENSATE_CLOCK STRING "CLK0"
 // Retrieval info: CONSTANT: GATE_LOCK_SIGNAL STRING "NO"
-// Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "20000"
+// Retrieval info: CONSTANT: INCLK0_INPUT_FREQUENCY NUMERIC "50000"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone II"
 // Retrieval info: CONSTANT: INVALID_LOCK_MULTIPLIER NUMERIC "5"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altpll"
