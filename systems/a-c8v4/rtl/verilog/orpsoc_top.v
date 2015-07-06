@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////
 ///                                                               ////
-/// ORPSoC top for Altera de1 board                               ////
+/// ORPSoC top for Altera A-C8V4 board                               ////
 ///                                                               ////
 /// Franck Jullien, franck.jullien@gmail.com                      ////
 ///                                                               ////
@@ -301,7 +301,7 @@ mor1kx	#(
 
 	.IBUS_WB_TYPE			("B3_REGISTERED_FEEDBACK"),
 	.DBUS_WB_TYPE			("B3_REGISTERED_FEEDBACK"),
-	.OPTION_CPU0			("CAPPUCCINO"),
+	.OPTION_CPU0			(`MOR1KX_CPU_FLAVOR),
 	.OPTION_RESET_PC		(32'hf0000100)
 ) mor1kx0 (
 	.iwbm_adr_o			(wb_m2s_or1k_i_adr),
