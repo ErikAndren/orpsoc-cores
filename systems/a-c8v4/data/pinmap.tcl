@@ -4,16 +4,6 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rst_n_pad_i
 set_location_assignment PIN_23 -to sys_clk_pad_i
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sys_clk_pad_i
 
-# SD card
-# set_location_assignment PIN_99 -to sd_clk_pad_o
-# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_clk_pad_o
-# set_location_assignment PIN_101 -to sd_cmd_pad_o
-# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_cmd_pad_o
-# set_location_assignment PIN_95 -to sd_dat_pad_i
-# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_dat_pad_i
-# set_location_assignment PIN_102 -to sd_dat3_pad_o
-# set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sd_dat3_pad_o
-
 # UART
 set_location_assignment PIN_160 -to uart0_srx_pad_i
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to uart0_srx_pad_i
