@@ -111,18 +111,14 @@ module pll (
 				.vcounderrange ());
 	defparam
 		altpll_component.bandwidth_type = "AUTO",
-		altpll_component.clk0_divide_by = 250000,
+		altpll_component.clk0_divide_by = 1,
 		altpll_component.clk0_duty_cycle = 50,
-		altpll_component.clk0_multiply_by = 333333,
+		altpll_component.clk0_multiply_by = 1,
 		altpll_component.clk0_phase_shift = "0",
-		altpll_component.clk1_divide_by = 5,
+		altpll_component.clk1_divide_by = 1,
 		altpll_component.clk1_duty_cycle = 50,
-		altpll_component.clk1_multiply_by = 4,
+		altpll_component.clk1_multiply_by = 1,
 		altpll_component.clk1_phase_shift = "0",
-		altpll_component.clk2_divide_by = 5,
-		altpll_component.clk2_duty_cycle = 50,
-		altpll_component.clk2_multiply_by = 12,
-		altpll_component.clk2_phase_shift = "0",
 		altpll_component.compensate_clock = "CLK0",
 		altpll_component.inclk0_input_frequency = 20000,
 		altpll_component.intended_device_family = "Cyclone III",
@@ -195,7 +191,7 @@ endmodule
 // Retrieval info: PRIVATE: CREATE_INCLK1_CHECK STRING "0"
 // Retrieval info: PRIVATE: CUR_DEDICATED_CLK STRING "c0"
 // Retrieval info: PRIVATE: CUR_FBIN_CLK STRING "c0"
-// Retrieval info: PRIVATE: DEVICE_SPEED_GRADE STRING "7"
+// Retrieval info: PRIVATE: DEVICE_SPEED_GRADE STRING "6"
 // Retrieval info: PRIVATE: DIV_FACTOR0 NUMERIC "3"
 // Retrieval info: PRIVATE: DIV_FACTOR1 NUMERIC "3"
 // Retrieval info: PRIVATE: DIV_FACTOR2 NUMERIC "1"
