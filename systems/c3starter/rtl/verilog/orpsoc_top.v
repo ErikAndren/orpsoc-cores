@@ -87,9 +87,6 @@ wire	wb_rst;
 wire	init_done;
 wire	ddr_rst;
 wire	async_rst;
-wire	pix_clock_x3;
-wire	pix_clock;
-
 
 clkgen clkgen0 (
 	.sys_clk_pad_i	(clock_50_pad_i),
@@ -98,9 +95,7 @@ clkgen clkgen0 (
 	.async_rst_o	(async_rst),
 	.wb_clk_o	(wb_clk),
 	.wb_rst_o	(wb_rst),
-	.ddr_rst_o	(ddr_rst),
-	.pixel_clock	(pix_clock),
-	.pixel_clock_x3	(pix_clock_x3)
+	.ddr_rst_o	(ddr_rst)
 );
 
 ////////////////////////////////////////////////////////////////////////
