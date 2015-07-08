@@ -38,20 +38,18 @@
 module clkgen
 (
 	// Main clocks in, depending on board
-	input	sys_clk_pad_i,
+	input  sys_clk_pad_i,
 	// Asynchronous, active low reset in
-	input	rst_n_pad_i,
+	input  rst_n_pad_i,
 	//
-	input	ddr_init_done,
+	input  ddr_init_done,
 	// Input reset - through a buffer, asynchronous
-	output	async_rst_o,
+	output async_rst_o,
 
 	// Wishbone clock and reset out
-	output	wb_clk_o,
-	output	wb_rst_o,
-	output	ddr_rst_o,
-	output	pixel_clock,
-	output	pixel_clock_x3
+	output wb_clk_o,
+	output wb_rst_o,
+	output ddr_rst_o
 );
 
 // First, deal with the asychronous reset
@@ -77,8 +75,6 @@ pll pll0 (
 	.areset	(async_rst),
 	.inclk0	(sys_clk_pad_i),
 	.c0	(wb_clk_o),
-	.c1	(pixel_clock),
-	.c2	(pixel_clock_x3),
 	.locked	(pll_lock)
 );
 
