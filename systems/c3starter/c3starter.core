@@ -121,9 +121,9 @@ tb_private_src_files =
  backend/rtl/verilog/ddr_ctrl_ip/sgate.v
  backend/rtl/verilog/ddr_ctrl_ip/altera_mf.v
  backend/rtl/verilog/ddr_ctrl_ip/220model.v
-# backend/rtl/verilog/ddr_ctrl_ip/ddr_ctrl_ip_phy_alt_mem_phy_seq_wrapper.vo
-# backend/rtl/verilog/ddr_ctrl_ip/ddr_ctrl_ip_sim.v
-# backend/rtl/verilog/ddr_ctrl_ip/ddr_ctrl_ip_phy.v
+ backend/rtl/verilog/ddr_ctrl_ip/ddr_ctrl_ip_phy_alt_mem_phy_seq_wrapper.vo
+ backend/rtl/verilog/ddr_ctrl_ip/ddr_ctrl_ip_sim.v
+ backend/rtl/verilog/ddr_ctrl_ip/ddr_ctrl_ip_phy.v
 
 #-------------------------------------
 # Verilog include files
