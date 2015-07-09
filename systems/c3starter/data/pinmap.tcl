@@ -97,20 +97,20 @@ set_location_assignment PIN_C3 -to flash_rst_n_pad_o
 set_location_assignment PIN_H13 -to flash_wait_pad_i
 
 # UART
-set_location_assignment PIN_E18 -to uart_rx_pad_i
-set_location_assignment PIN_H17 -to uart_tx_pad_o
+# Green
+set_location_assignment PIN_P1 -to uart_rx_pad_i
+
+# White
+set_location_assignment PIN_P2 -to uart_tx_pad_o
 
 #
 # GPIO0
 #
 set_location_assignment PIN_P13 -to gpio0_io[0]
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[0]
+# Must be disabled due to I/O constraints
 #set_location_assignment PIN_P12 -to gpio0_io[1]
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[1]
 set_location_assignment PIN_N12 -to gpio0_io[2]
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[2]
 set_location_assignment PIN_N9 -to gpio0_io[3]
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to gpio0_io[3]
 
 
 # Fitter Assignments
