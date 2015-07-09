@@ -679,7 +679,7 @@ gpio gpio1 (
 assign or1k_irq[0] = 0; // Non-maskable inside OR1K
 assign or1k_irq[1] = 0; // Non-maskable inside OR1K
 assign or1k_irq[2] = uart0_irq;
-assign or1k_irq[3] = 0;
+assign or1k_irq[3] = spi0_irq;
 assign or1k_irq[4] = 0;
 assign or1k_irq[5] = 0;
 assign or1k_irq[6] = 0;
