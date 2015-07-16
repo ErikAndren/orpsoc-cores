@@ -6,5 +6,8 @@
 `define MOR1KX_CPU
 //`define VGA_LCD
 //`define ETHERNET
-`define SPI
-//`define ROM
+`define SPI0
+`define SPI1
+`define SPI2
+
+`define ROM

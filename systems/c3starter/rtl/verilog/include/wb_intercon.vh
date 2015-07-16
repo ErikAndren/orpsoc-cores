@@ -84,6 +84,30 @@ wire  [7:0] wb_s2m_spi0_dat;
 wire        wb_s2m_spi0_ack;
 wire        wb_s2m_spi0_err;
 wire        wb_s2m_spi0_rty;
+wire [31:0] wb_m2s_spi1_adr;
+wire  [7:0] wb_m2s_spi1_dat;
+wire  [3:0] wb_m2s_spi1_sel;
+wire        wb_m2s_spi1_we;
+wire        wb_m2s_spi1_cyc;
+wire        wb_m2s_spi1_stb;
+wire  [2:0] wb_m2s_spi1_cti;
+wire  [1:0] wb_m2s_spi1_bte;
+wire  [7:0] wb_s2m_spi1_dat;
+wire        wb_s2m_spi1_ack;
+wire        wb_s2m_spi1_err;
+wire        wb_s2m_spi1_rty;
+wire [31:0] wb_m2s_spi2_adr;
+wire  [7:0] wb_m2s_spi2_dat;
+wire  [3:0] wb_m2s_spi2_sel;
+wire        wb_m2s_spi2_we;
+wire        wb_m2s_spi2_cyc;
+wire        wb_m2s_spi2_stb;
+wire  [2:0] wb_m2s_spi2_cti;
+wire  [1:0] wb_m2s_spi2_bte;
+wire  [7:0] wb_s2m_spi2_dat;
+wire        wb_s2m_spi2_ack;
+wire        wb_s2m_spi2_err;
+wire        wb_s2m_spi2_rty;
 wire [31:0] wb_m2s_rom0_adr;
 wire [31:0] wb_m2s_rom0_dat;
 wire  [3:0] wb_m2s_rom0_sel;
@@ -208,6 +232,30 @@ wb_intercon wb_intercon0
     .wb_spi0_ack_i     (wb_s2m_spi0_ack),
     .wb_spi0_err_i     (wb_s2m_spi0_err),
     .wb_spi0_rty_i     (wb_s2m_spi0_rty),
+    .wb_spi1_adr_o     (wb_m2s_spi1_adr),
+    .wb_spi1_dat_o     (wb_m2s_spi1_dat),
+    .wb_spi1_sel_o     (wb_m2s_spi1_sel),
+    .wb_spi1_we_o      (wb_m2s_spi1_we),
+    .wb_spi1_cyc_o     (wb_m2s_spi1_cyc),
+    .wb_spi1_stb_o     (wb_m2s_spi1_stb),
+    .wb_spi1_cti_o     (wb_m2s_spi1_cti),
+    .wb_spi1_bte_o     (wb_m2s_spi1_bte),
+    .wb_spi1_dat_i     (wb_s2m_spi1_dat),
+    .wb_spi1_ack_i     (wb_s2m_spi1_ack),
+    .wb_spi1_err_i     (wb_s2m_spi1_err),
+    .wb_spi1_rty_i     (wb_s2m_spi1_rty),
+    .wb_spi2_adr_o     (wb_m2s_spi2_adr),
+    .wb_spi2_dat_o     (wb_m2s_spi2_dat),
+    .wb_spi2_sel_o     (wb_m2s_spi2_sel),
+    .wb_spi2_we_o      (wb_m2s_spi2_we),
+    .wb_spi2_cyc_o     (wb_m2s_spi2_cyc),
+    .wb_spi2_stb_o     (wb_m2s_spi2_stb),
+    .wb_spi2_cti_o     (wb_m2s_spi2_cti),
+    .wb_spi2_bte_o     (wb_m2s_spi2_bte),
+    .wb_spi2_dat_i     (wb_s2m_spi2_dat),
+    .wb_spi2_ack_i     (wb_s2m_spi2_ack),
+    .wb_spi2_err_i     (wb_s2m_spi2_err),
+    .wb_spi2_rty_i     (wb_s2m_spi2_rty),
     .wb_rom0_adr_o     (wb_m2s_rom0_adr),
     .wb_rom0_dat_o     (wb_m2s_rom0_dat),
     .wb_rom0_sel_o     (wb_m2s_rom0_sel),

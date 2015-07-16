@@ -31,46 +31,60 @@ module orpsoc_top #(
 	parameter	uart0_aw = 3
 )
 (
-	input		clock_50_pad_i,
-	input		reset_n_pad_i,
+	input 	      clock_50_pad_i,
+	input 	      reset_n_pad_i,
 
-	output	[1:0]	ddr_dm_pad_o,
-	inout	[15:0]	ddr_dq_pad_io,
-	inout	[1:0]	ddr_dqs_pad_io,
-	output	[12:0]	ddr_a_pad_o,
-	output	[1:0]	ddr_ba_pad_o,
-	output		ddr_cas_n_pad_o,
-	output		ddr_cke_pad_o,
-	inout		ddr_clk_pad_o,
-	inout		ddr_clk_n_pad_o,
-	output		ddr_cs_n_pad_o,
-	output		ddr_ras_n_pad_o,
-	output		ddr_we_n_pad_o,
+	output [1:0]  ddr_dm_pad_o,
+	inout [15:0]  ddr_dq_pad_io,
+	inout [1:0]   ddr_dqs_pad_io,
+	output [12:0] ddr_a_pad_o,
+	output [1:0]  ddr_ba_pad_o,
+	output 	      ddr_cas_n_pad_o,
+	output 	      ddr_cke_pad_o,
+	inout 	      ddr_clk_pad_o,
+	inout 	      ddr_clk_n_pad_o,
+	output 	      ddr_cs_n_pad_o,
+	output 	      ddr_ras_n_pad_o,
+	output 	      ddr_we_n_pad_o,
 
-	output		led_debug_pad_o,
+	output 	      led_debug_pad_o,
 
-`ifdef SPI
-	output		spi0_sck_pad_o,
-	output		spi0_mosi_pad_o,
-	input		spi0_miso_pad_i,
-	output		spi0_ss_pad_o,
+`ifdef SPI0
+	output 	      spi0_sck_pad_o,
+	output 	      spi0_mosi_pad_o,
+	input 	      spi0_miso_pad_i,
+	output 	      spi0_ss_pad_o,
 `endif
 
-	inout	[15:0]	flash_dq_pad_io,
-	output	[22:0]	flash_adr_pad_o,
-	output		flash_adv_n_pad_o,
-	output		flash_ce_n_pad_o,
-	output		flash_clk_pad_o,
-	output		flash_oe_n_pad_o,
-	output		flash_rst_n_pad_o,
-	output		flash_wait_pad_i,
-	output		flash_we_n_pad_o,
+`ifdef SPI1
+	output		spi1_sck_pad_o,
+	output		spi1_mosi_pad_o,
+	input		spi1_miso_pad_i,
+	output		spi1_ss_pad_o,
+`endif
 
-	input		uart_rx_pad_i,
-	output		uart_tx_pad_o,
+`ifdef SPI2
+	output		spi2_sck_pad_o,
+	output		spi2_mosi_pad_o,
+	input		spi2_miso_pad_i,
+	output		spi2_ss_pad_o,
+`endif
+ 
+	inout [15:0]  flash_dq_pad_io,
+	output [22:0] flash_adr_pad_o,
+	output 	      flash_adv_n_pad_o,
+	output 	      flash_ce_n_pad_o,
+	output 	      flash_clk_pad_o,
+	output 	      flash_oe_n_pad_o,
+	output 	      flash_rst_n_pad_o,
+	output 	      flash_wait_pad_i,
+	output 	      flash_we_n_pad_o,
 
-	output	[7:0]	gpio0_io,
-	input	[3:0]	gpio1_i
+	input 	      uart_rx_pad_i,
+	output 	      uart_tx_pad_o,
+
+	output [7:0]  gpio0_io,
+	input [3:0]   gpio1_i
  
  
 
@@ -492,7 +506,7 @@ wire    spi0_irq;
 assign  wb_s2m_spi0_err = 0;
 assign  wb_s2m_spi0_rty = 0;
 
-`ifdef SPI
+`ifdef SPI0
 simple_spi spi0(
 	// Wishbone slave interface
 	.clk_i		(wb_clk),
@@ -518,8 +532,89 @@ simple_spi spi0(
    assign spi0_irq = 0;
    assign wb_s2m_spi0_dat = 0;
    assign wb_s2m_spi0_ack = 0;
-`endif // !`ifdef SPI
+`endif // !`ifdef SPI0
 
+////////////////////////////////////////////////////////////////////////
+//
+// SPI1 controller
+//
+////////////////////////////////////////////////////////////////////////
+
+
+wire    spi1_irq;
+
+assign  wb_s2m_spi1_err = 0;
+assign  wb_s2m_spi1_rty = 0;
+
+`ifdef SPI1
+simple_spi spi1(
+	// Wishbone slave interface
+	.clk_i		(wb_clk),
+	.rst_i		(wb_rst),
+	.adr_i		(wb_m2s_spi1_adr[2:0]),
+	.dat_i		(wb_m2s_spi1_dat),
+	.we_i		(wb_m2s_spi1_we),
+	.stb_i		(wb_m2s_spi1_stb),
+	.cyc_i		(wb_m2s_spi1_cyc),
+	.dat_o		(wb_s2m_spi1_dat),
+	.ack_o		(wb_s2m_spi1_ack),
+
+	// Outputs
+	.inta_o		(spi1_irq),
+	.sck_o		(spi1_sck_pad_o),
+	.ss_o		(spi1_ss_pad_o),
+	.mosi_o		(spi1_mosi_pad_o),
+
+	// Inputs
+	.miso_i		(spi1_miso_pad_i)
+);
+`else
+   assign spi1_irq = 0;
+   assign wb_s2m_spi1_dat = 0;
+   assign wb_s2m_spi1_ack = 0;
+`endif // !`ifdef SPI1
+
+////////////////////////////////////////////////////////////////////////
+//
+// SPI2 controller
+//
+////////////////////////////////////////////////////////////////////////
+
+
+wire    spi2_irq;
+
+assign  wb_s2m_spi2_err = 0;
+assign  wb_s2m_spi2_rty = 0;
+
+`ifdef SPI2
+simple_spi spi2(
+	// Wishbone slave interface
+	.clk_i		(wb_clk),
+	.rst_i		(wb_rst),
+	.adr_i		(wb_m2s_spi2_adr[2:0]),
+	.dat_i		(wb_m2s_spi2_dat),
+	.we_i		(wb_m2s_spi2_we),
+	.stb_i		(wb_m2s_spi2_stb),
+	.cyc_i		(wb_m2s_spi2_cyc),
+	.dat_o		(wb_s2m_spi2_dat),
+	.ack_o		(wb_s2m_spi2_ack),
+
+	// Outputs
+	.inta_o		(spi2_irq),
+	.sck_o		(spi2_sck_pad_o),
+	.ss_o		(spi2_ss_pad_o),
+	.mosi_o		(spi2_mosi_pad_o),
+
+	// Inputs
+	.miso_i		(spi2_miso_pad_i)
+);
+`else
+   assign spi2_irq = 0;
+   assign wb_s2m_spi2_dat = 0;
+   assign wb_s2m_spi2_ack = 0;
+`endif // !`ifdef SPI2
+
+   
 ////////////////////////////////////////////////////////////////////////
 //
 // GPIO 0
@@ -585,8 +680,8 @@ assign or1k_irq[0] = 0; // Non-maskable inside OR1K
 assign or1k_irq[1] = 0; // Non-maskable inside OR1K
 assign or1k_irq[2] = uart0_irq;
 assign or1k_irq[3] = spi0_irq;
-assign or1k_irq[4] = 0;
-assign or1k_irq[5] = 0;
+assign or1k_irq[4] = spi1_irq;
+assign or1k_irq[5] = spi2_irq;
 assign or1k_irq[6] = 0;
 assign or1k_irq[7] = 0;
 assign or1k_irq[8] = 0;

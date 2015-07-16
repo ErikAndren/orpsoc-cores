@@ -112,11 +112,23 @@ set_location_assignment PIN_P13 -to gpio0_io[0]
 set_location_assignment PIN_N12 -to gpio0_io[2]
 set_location_assignment PIN_N9 -to gpio0_io[3]
 
-# SPI
+# SPI0
 set_location_assignment PIN_R3 -to spi0_mosi_pad_o
 set_location_assignment PIN_T3 -to spi0_miso_pad_i
 set_location_assignment PIN_G17 -to spi0_sck_pad_o
 set_location_assignment PIN_G18 -to spi0_ss_pad_o
+
+# SPI1
+set_location_assignment PIN_K18 -to spi1_miso_pad_i
+set_location_assignment PIN_L18 -to spi1_mosi_pad_o
+set_location_assignment PIN_L16 -to spi1_sck_pad_o
+set_location_assignment PIN_M17 -to spi1_ss_pad_o
+
+# SPI2
+set_location_assignment PIN_L13 -to spi2_miso_pad_i
+set_location_assignment PIN_M14 -to spi2_mosi_pad_o
+set_location_assignment PIN_R17 -to spi2_sck_pad_o
+set_location_assignment PIN_R18 -to spi2_ss_pad_o
 
 
 # Fitter Assignments
