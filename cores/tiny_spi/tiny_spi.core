@@ -1,0 +1,14 @@
+CAPI=1
+[main]
+description = "OpenCores Tiny SPI Core"
+
+[verilog]
+src_files =
+ rtl/verilog/tiny_spi.v
+
+[provider]
+name = github
+user = ErikAndren
+repo = tiny_spi
+version = 562bf1fd8385410eedb91cec97bddeecee0ec0d9
+          
