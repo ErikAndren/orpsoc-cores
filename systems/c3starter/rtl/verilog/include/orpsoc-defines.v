@@ -10,4 +10,6 @@
 `define SPI1
 `define SPI2
 
+//`define TINY_SPI0
+
 `define ROM
