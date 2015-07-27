@@ -56,6 +56,14 @@ module orpsoc_top #(
 	output 	      spi0_ss_pad_o,
 `endif
 
+`ifdef TINY_SPI0
+ 	output 	      spi0_sck_pad_o,
+	output 	      spi0_mosi_pad_o,
+	input 	      spi0_miso_pad_i,
+	output 	      spi0_ss_pad_o,
+
+`endif
+
 `ifdef SPI1
 	output		spi1_sck_pad_o,
 	output		spi1_mosi_pad_o,
@@ -528,6 +536,29 @@ simple_spi spi0(
 	// Inputs
 	.miso_i		(spi0_miso_pad_i)
 );
+`elsif TINY_SPI0
+tiny_spi spi0(
+	      .clk_i (wb_clk),
+	      .rst_i (wb_rst),
+
+	      .adr_i (wb_m2s_spi0_adr[2:0]),
+	      .dat_i (wb_m2s_spi0_dat),
+
+	      .we_i  (wb_m2s_spi0_we),
+	      .stb_i (wb_m2s_spi0_stb),
+	      .cyc_i (wb_m2s_spi0_cyc),
+	      .dat_o (wb_s2m_spi0_dat),
+	      .ack_o (wb_s2m_spi0_ack),
+
+	      .int_o (spi0_irq),
+	      
+	      .SCLK  (spi0_sck_pad_o),
+	      .MOSI  (spi0_mosi_pad_o),
+	      .MISO  (spi0_miso_pad_i)
+	      );
+
+   assign spi0_ss_pad_o = gpio0_out[4];
+   
 `else
    assign spi0_irq = 0;
    assign wb_s2m_spi0_dat = 0;
