@@ -106,11 +106,22 @@ set_location_assignment PIN_P2 -to uart_tx_pad_o
 #
 # GPIO0
 #
+# Used as leds
 set_location_assignment PIN_P13 -to gpio0_io[0]
 # Must be disabled due to I/O constraints
 #set_location_assignment PIN_P12 -to gpio0_io[1]
 set_location_assignment PIN_N12 -to gpio0_io[2]
 set_location_assignment PIN_N9 -to gpio0_io[3]
+
+# Generic GPIOs
+set_location_assignment PIN_M6 -to gpio0_io[4]
+set_location_assignment PIN_N6 -to gpio0_io[5]
+set_location_assignment PIN_M13 -to gpio0_io[6]
+
+#
+# GPIO1
+#
+set_location_assignment PIN_F17 -to gpio1_i[0]
 
 # SPI0
 set_location_assignment PIN_R3 -to spi0_mosi_pad_o
