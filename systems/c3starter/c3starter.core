@@ -14,6 +14,7 @@ depend =
  wb_altera_ddr_wrapper
  mt46v16m16p
  simple_spi
+ tiny_spi
 
 
 ###########################################
