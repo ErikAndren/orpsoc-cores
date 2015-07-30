@@ -202,6 +202,7 @@ mor1kx	#(
 	.OPTION_DCACHE_LIMIT_WIDTH	(31),
 	.FEATURE_DMMU			("ENABLED"),
 	.OPTION_PIC_TRIGGER		("LATCHED_LEVEL"),
+	//.OPTION_PIC_TRIGGER		("EDGE"),
 
 	.IBUS_WB_TYPE			("B3_REGISTERED_FEEDBACK"),
 	.DBUS_WB_TYPE			("B3_REGISTERED_FEEDBACK"),
@@ -707,13 +708,21 @@ gpio gpio1 (
 //
 ////////////////////////////////////////////////////////////////////////
 
+// Create edge interrupt, the enc28j60 cannot clear the interrupt in the ISR as it is using SPI.
+
+reg eint6_r;
+always @(posedge wb_clk)
+  eint6_r <= gpio1_i[0];
+   
+wire eint6_edge = gpio1_i[0] & !eint6_r;
+
 assign or1k_irq[0] = 0; // Non-maskable inside OR1K
 assign or1k_irq[1] = 0; // Non-maskable inside OR1K
 assign or1k_irq[2] = uart0_irq;
 assign or1k_irq[3] = spi0_irq;
 assign or1k_irq[4] = spi1_irq;
 assign or1k_irq[5] = spi2_irq;
-assign or1k_irq[6] = 0;
+assign or1k_irq[6] = eint6_edge;   
 assign or1k_irq[7] = 0;
 assign or1k_irq[8] = 0;
 assign or1k_irq[9] = 0;
