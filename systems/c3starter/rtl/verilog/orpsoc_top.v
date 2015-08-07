@@ -520,7 +520,8 @@ simple_spi spi0(
 	// Wishbone slave interface
 	.clk_i		(wb_clk),
 	.rst_i		(wb_rst),
-	.adr_i		(wb_m2s_spi0_adr[2:0]),
+	.adr_i		(wb_m2s_spi0_adr[3:0]),
+	.sel_i          (wb_m2s_spi0_sel),
 	.dat_i		(wb_m2s_spi0_dat),
 	.we_i		(wb_m2s_spi0_we),
 	.stb_i		(wb_m2s_spi0_stb),
@@ -583,7 +584,8 @@ simple_spi spi1(
 	// Wishbone slave interface
 	.clk_i		(wb_clk),
 	.rst_i		(wb_rst),
-	.adr_i		(wb_m2s_spi1_adr[2:0]),
+	.adr_i		(wb_m2s_spi1_adr[3:0]),
+	.sel_i          (wb_m2s_spi1_sel),
 	.dat_i		(wb_m2s_spi1_dat),
 	.we_i		(wb_m2s_spi1_we),
 	.stb_i		(wb_m2s_spi1_stb),
@@ -623,7 +625,8 @@ simple_spi spi2(
 	// Wishbone slave interface
 	.clk_i		(wb_clk),
 	.rst_i		(wb_rst),
-	.adr_i		(wb_m2s_spi2_adr[2:0]),
+	.adr_i		(wb_m2s_spi2_adr[3:0]),
+	.sel_i          (wb_m2s_spi2_sel),		
 	.dat_i		(wb_m2s_spi2_dat),
 	.we_i		(wb_m2s_spi2_we),
 	.stb_i		(wb_m2s_spi2_stb),
